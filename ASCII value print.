@@ -1,0 +1,14 @@
+1.given an array which contains 3 array as an elements inside these three array , it contains values
+ present ASCII values of those given elemnts inside array.
+       
+       public class Main{
+    public static void main(String[] args){
+       char array[][]={{'a','b'},{'c','d'},{'e','f'}};
+       for(int i=0;i<3;i++){
+           for(int j=0;j<2;j++){
+               int x=array[i][j];
+               System.out.println(x);
+           }
+       }
+}
+}
