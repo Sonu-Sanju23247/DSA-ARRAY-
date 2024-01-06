@@ -1,0 +1,21 @@
+
+        // 9. Find the total number of pairs in the array whose sum is equal to the given value X :
+
+      public class Main{
+         public static void main(String[] args){
+          Scanner scan=new Scanner(System.in);
+         System.out.println("enter the target value :");
+         int arr[]={12,2,5,7,10};
+         int target_value=scan.nextInt();
+         int count=0;
+         for(int i=0;i<arr.length;i++){
+        for(int j=0;j<arr.length;j++){
+        if(target_value==arr[i]+arr[j]){
+        count++;
+        System.out.println(arr[i]+" "+arr[j]);
+        }
+        }
+        }
+        System.out.println("the frequency of pair is :"+" "+count);}}
+
+
