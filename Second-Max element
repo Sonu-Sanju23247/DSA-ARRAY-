@@ -1,0 +1,26 @@
+ // 11. Find the Second largest element in the given array.
+/*
+public class Main{
+    public static void main(String[] args){
+        int arr[]={2,5,3,4,9,1,7};
+        int max=0;
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>max){
+                max=arr[i];
+                arr[i]=0;
+            }
+        }
+        int arr_2[]=arr;
+        int second_max=0;
+        for(int i=0;i<arr.length;i++){
+            if(arr_2[i]>second_max){
+                second_max=arr_2[i];
+            }
+        }
+        System.out.println("first max is :"+" "+max);
+        System.out.println("second max is :"+" "+second_max);
+
+    }
+     }
+ */
