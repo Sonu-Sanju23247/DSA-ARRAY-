@@ -1,0 +1,41 @@
+/26.Find the pair sum using two pointers approach:
+
+public class Main {
+    static int pairSum(int arr[], int x) {
+        int left = 0;
+        int right = arr.length - 1;
+        int count = 0;
+
+        while (left < right) {
+            int currentSum = arr[left] + arr[right];
+
+            if (currentSum == x) {
+                count++;
+                left++;
+                right--;
+            }
+            else if (currentSum < x) {
+                left++;
+            }
+            else {
+                right--;
+            }
+        }
+        return count;
+    }
+    static void printArray(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int arr[] = {1, 2, 3, 4, 5, 6};
+        System.out.println("Enter the target number:");
+        int x = sc.nextInt();
+        int result = pairSum(arr, x);
+        System.out.println("the number of coount of pair sum is :");
+        System.out.println(result);
+    }
+}
