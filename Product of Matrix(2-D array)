@@ -1,0 +1,57 @@
+public class Main {
+    static  void printMatrix(int[][]matrix){
+        for(int i=0;i< matrix.length;i++){
+            for(int j=0;j< matrix.length;j++){
+                System.out.print(matrix[i][j]);
+            }
+            System.out.println();
+        }
+
+    }
+    static  void Multiply(int [][]matrix_1,int row_1,int col_1,int[][]matrix_2,int row_2,int col_2){
+        if(col_1!=row_2){
+            System.out.println("OOps!! cannot be multiplied :");
+            return;
+        }
+        int [][]multi=new int[row_1][col_2];
+        for(int i=0;i<row_1;i++) {
+            for (int j = 0; j < col_2; j++) {
+                for(int k=0;k<col_1;k++){
+                    multi[i][j] += (matrix_1[i][k]*matrix_2[k][j]);
+                }
+
+            }
+        }
+        System.out.println("product of two matrix is:");
+        printMatrix(multi);
+
+    }
+    public static  void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter number of row_1: ");
+        int row_1=sc.nextInt();
+        System.out.println("enter number of column_1:");
+        int col_1=sc.nextInt();
+        int [][]matrix_1=new int[row_1][col_1];
+        System.out.println("enter the elements of matrix -1 :");
+        for(int i=0;i<row_1;i++){
+            for(int j=0;j<col_1;j++){
+              matrix_1[i][j]=sc.nextInt();
+            }
+        }
+        printMatrix(matrix_1);
+        System.out.println("enter number of row_2: ");
+        int row_2=sc.nextInt();
+        System.out.println("enter number of column_2:");
+        int col_2=sc.nextInt();
+        int [][]matrix_2=new int[row_2][col_2];
+        System.out.println("enter the elements of matrix-2 :");
+        for(int i=0;i<row_2;i++){
+            for(int j=0;j<col_2;j++){
+                matrix_2[i][j]=sc.nextInt();
+            }
+        }
+        printMatrix(matrix_2);
+        Multiply(matrix_1,row_1,col_1,matrix_2,row_2,col_2);
+    }
+}
