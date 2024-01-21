@@ -1,0 +1,64 @@
+//---------------SPIRAL PRINTING OF 2-D ARRAY------------------
+/*public class Main {
+    static void printarray(int[][]matrix){
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j< matrix.length;j++){
+                System.out.print(matrix[i][j]);
+            }
+        }
+        System.out.println(" ");
+    }
+
+    static  void spiralOrder(int[][]matrix,int r,int c){
+        int topRow=0;
+        int bottomRow=r-1;
+        int leftCol=0;
+        int rightCol=c-1;
+        int totalelements=0;
+        while(totalelements<r*c){
+            // toprow->leftcol to rightcol;
+            for(int j=leftCol;j<=rightCol && totalelements<r*c; j++){
+                System.out.println(matrix[topRow][j]);
+            }
+            topRow++;
+
+            //rightCol->topRow to BottomRow
+            for(int i=topRow;i<=bottomRow;i++){
+                System.out.println(matrix[i][rightCol]);
+            }
+            rightCol--;
+
+            // bottomRow->rightcol to leftcol
+            for(int j=rightCol;j>=leftCol;j--){
+                System.out.println(matrix[bottomRow][j]);
+            }
+            bottomRow--;
+
+            //leftcol->bottomRow to toprow
+            for(int i=bottomRow;i>=topRow;i--){
+                    System.out.println(matrix[i][leftCol]);
+                }
+                leftCol++;
+            }
+        }
+
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the row and column:");
+        int r=sc.nextInt();
+        int c= sc.nextInt();
+        System.out.println("enter the elments:");
+        int[][]matrix=new int[r][c];
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                matrix[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("original matrix is:");
+        printarray(matrix);
+        System.out.println("Spiralmatrix:");
+        spiralOrder(matrix,r,c);
+        printarray(matrix);
+
+    }
+}
